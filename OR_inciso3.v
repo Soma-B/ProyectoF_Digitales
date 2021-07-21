@@ -1,4 +1,4 @@
-module f5(
+module or_1(
     output out_7,
     input wire_out1,
     input wire_out2,

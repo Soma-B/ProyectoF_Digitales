@@ -1,0 +1,45 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000167f3692720 .scope module, "or_1" "or_1" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out_7";
+    .port_info 1 /INPUT 1 "wire_out1";
+    .port_info 2 /INPUT 1 "wire_out2";
+    .port_info 3 /INPUT 1 "wire_out3";
+    .port_info 4 /INPUT 1 "wire_out4";
+    .port_info 5 /INPUT 1 "wire_out5";
+    .port_info 6 /INPUT 1 "wire_out6";
+o00000167f36c70c8 .functor BUFZ 1, C4<z>; HiZ drive
+o00000167f36c70f8 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000167f3693230 .functor OR 1, o00000167f36c70c8, o00000167f36c70f8, C4<0>, C4<0>;
+o00000167f36c7128 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000167f363e1d0 .functor OR 1, L_00000167f3693230, o00000167f36c7128, C4<0>, C4<0>;
+o00000167f36c7158 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000167f363e240 .functor OR 1, L_00000167f363e1d0, o00000167f36c7158, C4<0>, C4<0>;
+o00000167f36c7188 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000167f363e2b0 .functor OR 1, L_00000167f363e240, o00000167f36c7188, C4<0>, C4<0>;
+o00000167f36c71b8 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000167f363e320 .functor OR 1, L_00000167f363e2b0, o00000167f36c71b8, C4<0>, C4<0>;
+v00000167f3692dd0_0 .net *"_ivl_0", 0 0, L_00000167f3693230;  1 drivers
+v00000167f36928b0_0 .net *"_ivl_2", 0 0, L_00000167f363e1d0;  1 drivers
+v00000167f3692950_0 .net *"_ivl_4", 0 0, L_00000167f363e240;  1 drivers
+v00000167f36929f0_0 .net *"_ivl_6", 0 0, L_00000167f363e2b0;  1 drivers
+v00000167f3692a90_0 .net "out_7", 0 0, L_00000167f363e320;  1 drivers
+v00000167f3692b30_0 .net "wire_out1", 0 0, o00000167f36c70c8;  0 drivers
+v00000167f363de20_0 .net "wire_out2", 0 0, o00000167f36c70f8;  0 drivers
+v00000167f363dec0_0 .net "wire_out3", 0 0, o00000167f36c7128;  0 drivers
+v00000167f363df60_0 .net "wire_out4", 0 0, o00000167f36c7158;  0 drivers
+v00000167f363e090_0 .net "wire_out5", 0 0, o00000167f36c7188;  0 drivers
+v00000167f363e130_0 .net "wire_out6", 0 0, o00000167f36c71b8;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "OR_inciso3.v";

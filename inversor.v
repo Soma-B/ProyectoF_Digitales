@@ -1,4 +1,4 @@
-module f6(
+module inversor(
    output noX,
    output noY,
    output noZ,

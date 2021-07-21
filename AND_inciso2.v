@@ -1,33 +1,41 @@
-`include "inversor.v"
-module f1(
+//`include "inversor.v"
+module m1(
      output out_1,
     input Y,
     input K,
     input M,
+    input X
     // imput noX,
     // REcordar poner noX
-   wire noX
+   //wire noX
+
 );
+//wire wire_noX;
+//inversor(wire_noX,X);
+assign noX = !X;
 assign out_1 = (Y)&(K)&(M)&(noX);// recordar incluir a noX
 endmodule
 
-module f2(
+module m2(
     output out_2,
-    //input noX,
-    //input noY,
+    input X,
+    input Y,
     input Z,
-    input noM
+    input M
     // REcordar poner noX
-
+  
 );
-assign out_2 = (Z)&(noM);// recordar incluir a noX
+assign noX = !X;
+assign noY = !Y;
+assign noM = !M;
+assign out_2 = (noX)&(noY)&(Z)&(noM);// recordar incluir a noX
 endmodule
 
-module f3(
+module m3(
     output out_3,
     //input noX,
-    input noY,
-    input noZ,
+    input Y,
+    input Z,
     //input noK,
     //input noM,
     input X,
@@ -38,14 +46,16 @@ module f3(
     // REcordar poner noX
     
 );
+assign noY = !Y;
+assign noZ = !Z;
 assign out_3= (X)&(noY)&(K)&(noZ);// recordar incluir a noX
 endmodule
 
-module f4(
+module m4(
     output out_4,
-    input noX,
+    input X,
     //input noY,
-    input noZ,
+    input Z,
     //input noY,
     //input noK,
     //input noM,
@@ -57,14 +67,16 @@ module f4(
     // REcordar poner noX
     
 );
+assign noX = !X;
+assign noZ = !Z;
 assign out_4 = (noX)&(K)&(noZ);// recordar incluir a noX
 endmodule
 
-module f5(
+module m5(
     output out_5,
     //input noX,
-    input noY,
-    input noZ
+    input Y,
+    input K
     //input noY,
     //input noK,
     //input noM,
@@ -76,14 +88,16 @@ module f5(
     // REcordar poner noX
     
 );
-assign out_5 = (noY)&(noZ);// recordar incluir a noX
+assign noY = !Y;
+assign noK = !K;
+assign out_5 = (noY)&(noK);// recordar incluir a noX
 endmodule
 
-module f6(
+module m6(
     output out_6,
     //input noX,
     //input noY,
-    input noZ,
+    input Z,
     //input noY,
     //input noK,
     //input noM,
@@ -95,6 +109,7 @@ module f6(
     // REcordar poner noX
     
 );
+assign noZ = !Z;
 assign out_6 = (X)&(noZ)&(M);// recordar incluir a noX
 endmodule
 
