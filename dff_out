@@ -1,0 +1,46 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000250f0b52510 .scope module, "f6" "f6" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "noX";
+    .port_info 1 /OUTPUT 1 "noY";
+    .port_info 2 /OUTPUT 1 "noZ";
+    .port_info 3 /OUTPUT 1 "noK";
+    .port_info 4 /OUTPUT 1 "noM";
+    .port_info 5 /INPUT 1 "X";
+    .port_info 6 /INPUT 1 "Y";
+    .port_info 7 /INPUT 1 "Z";
+    .port_info 8 /INPUT 1 "K";
+    .port_info 9 /INPUT 1 "M";
+o00000250f0b86fd8 .functor BUFZ 1, C4<z>; HiZ drive
+v00000250f0b52de0_0 .net "K", 0 0, o00000250f0b86fd8;  0 drivers
+o00000250f0b87008 .functor BUFZ 1, C4<z>; HiZ drive
+v00000250f09cd850_0 .net "M", 0 0, o00000250f0b87008;  0 drivers
+o00000250f0b87038 .functor BUFZ 1, C4<z>; HiZ drive
+v00000250f0b526a0_0 .net "X", 0 0, o00000250f0b87038;  0 drivers
+o00000250f0b87068 .functor BUFZ 1, C4<z>; HiZ drive
+v00000250f0b52740_0 .net "Y", 0 0, o00000250f0b87068;  0 drivers
+o00000250f0b87098 .functor BUFZ 1, C4<z>; HiZ drive
+v00000250f0b527e0_0 .net "Z", 0 0, o00000250f0b87098;  0 drivers
+v00000250f0b52880_0 .net "noK", 0 0, L_00000250f0b80a10;  1 drivers
+v00000250f0b52920_0 .net "noM", 0 0, L_00000250f0b812d0;  1 drivers
+v00000250f09cb670_0 .net "noX", 0 0, L_00000250f09cb8e0;  1 drivers
+v00000250f09cb710_0 .net "noY", 0 0, L_00000250f09cb980;  1 drivers
+v00000250f09cb840_0 .net "noZ", 0 0, L_00000250f0b80bf0;  1 drivers
+L_00000250f09cb8e0 .reduce/nor o00000250f0b87038;
+L_00000250f09cb980 .reduce/nor o00000250f0b87068;
+L_00000250f0b80bf0 .reduce/nor o00000250f0b87098;
+L_00000250f0b80a10 .reduce/nor o00000250f0b86fd8;
+L_00000250f0b812d0 .reduce/nor o00000250f0b87008;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "inversor.v";
