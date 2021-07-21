@@ -1,13 +1,14 @@
+`include "inversor.v"
 module f1(
      output out_1,
     input Y,
     input K,
-    input M
+    input M,
     // imput noX,
     // REcordar poner noX
-   
+   wire noX
 );
-assign out_1 = (Y)&(K)&(M);// recordar incluir a noX
+assign out_1 = (Y)&(K)&(M)&(noX);// recordar incluir a noX
 endmodule
 
 module f2(
