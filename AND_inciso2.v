@@ -1,4 +1,4 @@
-//`include "inversor.v"
+
 module m1(
      output out_1,
     input Y,
@@ -16,15 +16,12 @@ module m2(
     input X,
     input Y,
     input Z,
-    input M
-    // REcordar poner noX
-  
+    input M  
 );
 assign noX = !X;
 assign noY = !Y;
 assign noM = !M;
-assign out_2 = (noX)&(noY)&(Z)&(noM);// recordar incluir a noX
-endmodule
+assign out_2 = (noX)&(noY)&(Z)&(noM);
 
 module m3(
     output out_3,
@@ -35,8 +32,7 @@ module m3(
 );
 assign noY = !Y;
 assign noZ = !Z;
-assign out_3= (X)&(noY)&(K)&(noZ);// recordar incluir a noX
-endmodule
+assign out_3= (X)&(noY)&(K)&(noZ);
 
 module m4(
     output out_4,
@@ -46,7 +42,7 @@ module m4(
 );
 assign noX = !X;
 assign noZ = !Z;
-assign out_4 = (noX)&(K)&(noZ);// recordar incluir a noX
+assign out_4 = (noX)&(K)&(noZ);
 endmodule
 
 module m5(
@@ -56,8 +52,7 @@ module m5(
 );
 assign noY = !Y;
 assign noK = !K;
-assign out_5 = (noY)&(noK);// recordar incluir a noX
-endmodule
+assign out_5 = (noY)&(noK);
 
 module m6(
     output out_6,
@@ -66,6 +61,6 @@ module m6(
     input M  
 );
 assign noZ = !Z;
-assign out_6 = (X)&(noZ)&(M);// recordar incluir a noX
+assign out_6 = (X)&(noZ)&(M);
 endmodule
 
