@@ -5,15 +5,10 @@ module m1(
     input K,
     input M,
     input X
-    // imput noX,
-    // REcordar poner noX
-   //wire noX
-
 );
-//wire wire_noX;
-//inversor(wire_noX,X);
+
 assign noX = !X;
-assign out_1 = (Y)&(K)&(M)&(noX);// recordar incluir a noX
+assign out_1 = (Y)&(K)&(M)&(noX);
 endmodule
 
 module m2(
@@ -33,18 +28,10 @@ endmodule
 
 module m3(
     output out_3,
-    //input noX,
     input Y,
-    input Z,
-    //input noK,
-    //input noM,
-    input X,
-    //input Y,
-    //input Z,
-    input K
-    //input M,
-    // REcordar poner noX
-    
+    input Z,  
+    input X,  
+    input K   
 );
 assign noY = !Y;
 assign noZ = !Z;
@@ -54,18 +41,8 @@ endmodule
 module m4(
     output out_4,
     input X,
-    //input noY,
     input Z,
-    //input noY,
-    //input noK,
-    //input noM,
-    //input X,
-    //input Y,
-    //input Z,
-    input K
-    //input M,
-    // REcordar poner noX
-    
+    input K  
 );
 assign noX = !X;
 assign noZ = !Z;
@@ -74,19 +51,8 @@ endmodule
 
 module m5(
     output out_5,
-    //input noX,
     input Y,
-    input K
-    //input noY,
-    //input noK,
-    //input noM,
-    //input X,
-    //input Y,
-    //input Z,
-    //input K,
-    //input M,
-    // REcordar poner noX
-    
+    input K   
 );
 assign noY = !Y;
 assign noK = !K;
@@ -95,19 +61,9 @@ endmodule
 
 module m6(
     output out_6,
-    //input noX,
-    //input noY,
     input Z,
-    //input noY,
-    //input noK,
-    //input noM,
     input X,
-    //input Y,
-    //input Z,
-    //input K,
-    input M
-    // REcordar poner noX
-    
+    input M  
 );
 assign noZ = !Z;
 assign out_6 = (X)&(noZ)&(M);// recordar incluir a noX
