@@ -22,6 +22,7 @@ assign noX = !X;
 assign noY = !Y;
 assign noM = !M;
 assign out_2 = (noX)&(noY)&(Z)&(noM);
+endmodule
 
 module m3(
     output out_3,
@@ -33,7 +34,7 @@ module m3(
 assign noY = !Y;
 assign noZ = !Z;
 assign out_3= (X)&(noY)&(K)&(noZ);
-
+endmodule
 module m4(
     output out_4,
     input X,
@@ -53,7 +54,7 @@ module m5(
 assign noY = !Y;
 assign noK = !K;
 assign out_5 = (noY)&(noK);
-
+endmodule
 module m6(
     output out_6,
     input Z,

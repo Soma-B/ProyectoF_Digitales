@@ -9,7 +9,7 @@ module OR_inciso2(
     
     
 );
-assign out_7 = (out1)|(out2)|(out3)|(out4)|(out5)|(out6);// recordar incluir a noX
+assign out_7 = (out1)|(out2)|(out3)|(out4)|(out5)|(out6);
 endmodule
 
  
