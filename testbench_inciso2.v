@@ -5,15 +5,24 @@
 module funcion_Final_Inciso2 (F_Final,X,Y,Z,K,M);
     output F_Final;
     input X,Y,Z,K,M;
-    wire wire_out_1,wire_out_2,wire_out_3,wire_out_4,wire_out_5,wire_out_6;
+    wire wire_S_1, wire_S_2, wire_S_3, wire_S_4, wire_S_5, wire_S_6, wire_S_7, wire_S_8, wire_S_, wire_S_9, wire_S_10, wire_S_11, wire_S_12, wire_S_13, wire_S_14;
 
-   m1 inst_m1 (wire_out1, noX, Y, K, M);
-   m2 inst_m2 (wire_out2,noX,noY,Z,noM);
-   m3 inst_m3 (wire_out3,X,noY,K,noZ);
-   m4 inst_m4 (wire_out4,noX,K,noZ);
-   m5 inst_m5 (wire_out5,noY,noK);
-   m6 inst_m6 (wire_out6,X,noZ,M);
+   m_1 inst_m_1 (wire_S_1, noX, noY, noZ, K, noM );
+   m_2 inst_m_2 (wire_S_2, noX, noY, noZ, K, M );
+   m_3 inst_m_3 (wire_S_3, noX, Y, noZ, K, noM );
+   m_4 inst_m_4 (wire_S_4, noX, Y, noZ, K, M );
+   m_5 inst_m_5 (wire_S_5, noX, Y, Z, K, M);
+   m_6 inst_m_6 (wire_S_6, noX, noY, Z, K, noM);
+   m_7 inst_m_7 (wire_S_7, X,  noY, Z, noK, noM);
+   m_8 inst_m_8 (wire_S_8, X, noY, Z, noK, M );
+   m_9 inst_m_9 (wire_S_9, X, noY, Z, noK, noM );
+   m_10 inst_m_10 (wire_S_10, X, noY, noZ, noK, M );
+   m_1 inst_m_11 (wire_S_11, X, noY, noZ, K, M );
+   m_12 inst_m_12 (wire_S_12, X, Y, noZ, K, M  );
+   m_13 inst_m_13 (wire_S_13, X, Y, noZ, noK, M );
+   m_14 inst_m_14 (wire_S_14, X, noY, noZ, K,   noM );
 
-   OR_inciso2 inst_m7 (F_Final,wire_out_1,wire_out_2,wire_out_3,wire_out_4,wire_out_5,wire_out_6);
+   OR_inciso2 inst_m7 (F_Final,wire_S_1, wire_S_2, wire_S_3, wire_S_4, wire_S_5, wire_S_6, wire_S_7, wire_S_8, wire_S_9, wire_S_10, wire_S_11, wire_S_12, wire_S_13, wire_S_14);
 
 endmodule
+
