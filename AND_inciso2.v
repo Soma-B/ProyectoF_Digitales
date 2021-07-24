@@ -45,7 +45,8 @@ assign noX = !X;
 assign noZ = !Z;
 assign out_4 = (noX)&(K)&(noZ);
 endmodule
-
+//comentario de algo
+//otro comerntario 
 module m5(
     output out_5,
     input Y,
