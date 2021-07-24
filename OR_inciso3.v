@@ -1,15 +1,15 @@
-module or_1(
+module OR_inciso2(
     output out_7,
-    input wire_out1,
-    input wire_out2,
-    input wire_out3,
-    input wire_out4,
-    input wire_out5,
-    input wire_out6
+    input out1,
+    input out2,
+    input out3,
+    input out4,
+    input out5,
+    input out6
     
     
 );
-assign out_7 = (wire_out1)|(wire_out2)|(wire_out3)|(wire_out4)|(wire_out5)|(wire_out6);// recordar incluir a noX
+assign out_7 = (out1)|(out2)|(out3)|(out4)|(out5)|(out6);
 endmodule
 
  
