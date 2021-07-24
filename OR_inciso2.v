@@ -13,7 +13,7 @@ module OR_inciso2(
     input S_11,
     input S_12,
     input S_13,
-    input S_14    
+    input S_14   
 );
 assign S_OR = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_14);
 endmodule
