@@ -1,6 +1,6 @@
 
-module m_1(
-    output S_OR,
+module AND_inciso2(
+    output S_OR2,
     input X,
     input Y,
     input Z,
@@ -28,6 +28,6 @@ assign S_11 = (X)&(noY)&(noZ)&(K)&(M);
 assign S_12 = (X)&(Y)&(noZ)&(K)&(M);
 assign S_13 = (X)&(Y)&(noZ)&(noK)&(M);
 assign S_14 = (X)&(noY)&(noZ)&(K)&(noM);
-assign S_OR = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_14);
+assign S_OR2 = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_14);
 
 endmodule

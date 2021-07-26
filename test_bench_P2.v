@@ -1,40 +1,146 @@
-`include "AND_inciso3.v"
-`include "AND_inciso2.v"
+`include "Celda_Inicial.v"
+`include "Celda_tipica.v"
+`include "Celda_Final.v"
 
+// PARA CELDA INICIAL
+module m1k;
+reg X,Y,K,Z,L;
+wire SXI,SYI,SKI,SZI;
 
-
-module Test_bench1;
-
-//used upper case for signals to avoid confusion
-    /*reg X, Y,Z ,K, M; // Entradas
-    wire out_7,S_OR;  // Salidas
-    integer i;*/
-    m1 Indtance0 (out_7, X, Y, Z,K,M);
-    m_1 Indtance1 (S_OR, X, Y, Z,K,M);
-    //TABLA Indtance2 ();
-       reg X, Y,Z ,K, M; // Entradas
-    wire out_7,S_OR;  // Salidas
-    integer i;
-    
+CI Indtance0 ( SXI,SYI,SKI,SZI, X,Y,K,Z,L);
 initial begin
 
-    // Estímulo
-    // Para iniciar en 00000
-    X <= 0;Y <= 0;Z <= 0;K <= 0;M <= 0;
+		X=0;	Y=0;	Z=0;	K=0;	L=1;	
+	#1	X=0;	Y=0;	Z=0;	K=1;	L=0;	
+	#1	X=0;	Y=0;	Z=0;	K=1;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	K=0;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	K=0;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	K=1;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	K=1;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	K=0;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	K=0;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	K=1;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	K=1;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	K=0;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	K=0;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	K=1;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	K=1;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	K=0;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	K=0;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	K=1;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	K=1;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	K=0;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	K=0;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	K=1;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	K=1;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	K=0;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	K=0;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	K=1;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	K=1;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	K=0;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	K=0;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	K=1;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	K=1;	L=1;	
 
-    for(i = 0; i < 32; i = i + 1) 
-        begin
-            {X,Y,Z,K,M} = i; 
-            #10; 
-        end   
 end
-   
 initial begin
-    // $monitor("A=%0b B=%0b C=%0b D=%0b E=%0b F=%0b Fmin=%0b", X,Y,Z,K,M, out_7);
-    // Crear archivo .vcd para gtkwave
-        $dumpfile("Prueba_P2.vcd");
-        $dumpvars(0, Test_bench1);
+    //$monitor ("%t |X = %d| Y = %d| Z = %d| S_1 = %d", $time, X, Y, Z, S_1);
+    $dumpfile("dump.vcd");
+    $dumpvars();
 end
 endmodule
 
+//PARA CELDA TIPICA
+module m2k;
+reg X,Y,W,L,Z;
+wire SXT,SYT,SKT,SZT;
+CT Indtance1 ( SXT,SYT,SKT,SZT, X,Y,W,L);
+initial begin
 
+		X=0;	Y=0;	Z=0;	W=0;	L=1;	
+	#1	X=0;	Y=0;	Z=0;	W=1;	L=0;	
+	#1	X=0;	Y=0;	Z=0;	W=1;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	W=0;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	W=0;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	W=1;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	W=1;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	W=0;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	W=0;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	W=1;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	W=1;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	W=0;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	W=0;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	W=1;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	W=1;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	W=0;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	W=0;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	W=1;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	W=1;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	W=0;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	W=0;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	W=1;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	W=1;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	W=0;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	W=0;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	W=1;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	W=1;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	W=0;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	W=0;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	W=1;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	W=1;	L=1;	
+
+end
+initial begin
+    //$monitor ("%t |X = %d| Y = %d| Z = %d| S_1 = %d", $time, X, Y, Z, S_1);
+    $dumpfile("dump.vcd");
+    $dumpvars();
+end
+endmodule
+
+//PARA CELDA FINAL
+module m3k;
+reg X,Y,W,L,Z;
+wire SZF;
+CF Indtance2 ( SZF, X,Y,W,L);
+initial begin
+    
+
+		X=0;	Y=0;	Z=0;	W=0;	L=1;	
+	#1	X=0;	Y=0;	Z=0;	W=1;	L=0;	
+	#1	X=0;	Y=0;	Z=0;	W=1;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	W=0;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	W=0;	L=1;	
+	#1	X=0;	Y=0;	Z=1;	W=1;	L=0;	
+	#1	X=0;	Y=0;	Z=1;	W=1;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	W=0;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	W=0;	L=1;	
+	#1	X=0;	Y=1;	Z=0;	W=1;	L=0;	
+	#1	X=0;	Y=1;	Z=0;	W=1;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	W=0;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	W=0;	L=1;	
+	#1	X=0;	Y=1;	Z=1;	W=1;	L=0;	
+	#1	X=0;	Y=1;	Z=1;	W=1;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	W=0;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	W=0;	L=1;	
+	#1	X=1;	Y=0;	Z=0;	W=1;	L=0;	
+	#1	X=1;	Y=0;	Z=0;	W=1;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	W=0;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	W=0;	L=1;	
+	#1	X=1;	Y=0;	Z=1;	W=1;	L=0;	
+	#1	X=1;	Y=0;	Z=1;	W=1;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	W=0;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	W=0;	L=1;	
+	#1	X=1;	Y=1;	Z=0;	W=1;	L=0;	
+	#1	X=1;	Y=1;	Z=0;	W=1;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	W=0;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	W=0;	L=1;	
+	#1	X=1;	Y=1;	Z=1;	W=1;	L=0;	
+	#1	X=1;	Y=1;	Z=1;	W=1;	L=1;	
+
+end
+initial begin
+    //$monitor ("%t |X = %d| Y = %d| Z = %d| S_1 = %d", $time, X, Y, Z, S_1);
+    $dumpfile("dump.vcd");
+    $dumpvars();
+end
+endmodule
