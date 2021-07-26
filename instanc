@@ -1,0 +1,15 @@
+ 
+ module Todas(
+     input [2:0] x,y,k,L_i;
+     output [2:0] X,Y,K,Z;
+     wire WX1, WY1, WK1, WX2, WY2,WK2,WX3,WY3,WK3; 
+// aqui es donde estoy pegado, estoy tratando de hacer los wires, de una maenra corecta
+
+ //CI inst1 (.L_i(L[0]), .X_i(WX1,X[0]), .Y_i(WY1,Y[0]), .K_i(WK1,K[0]), Z(Z[0]) );
+ CI inst1 ( WX1, WY1, WK1, SZI,X_i, Y_i, K_i, L);
+ CT inst2 ( SXT, SYT, SKT, SZT, WX1, WY1,WK1, L );
+ CF inst3 ( );
+
+ SZF, SXT,SYT,SKT,L
+
+ );
