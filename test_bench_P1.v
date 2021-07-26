@@ -7,8 +7,8 @@ module Test_bench_P1;
     wire WS_OR2, WS_OR3,WS_OR4,WS_OR5, Wout_7,Wout_8;  // Salidas
     integer i;
 
-    AND_inciso2 Indtance0 ( WS_OR2,WS_OR4,WS_OR5, X, Y, Z,K,M);
-    AND_inciso3 Indtance1 (WS_OR3,Wout_7,Wout_8, X, Y, Z,K,M);
+    AND_inciso2 Indtance0 ( WS_OR2,X, Y, Z,K,M);
+    AND_inciso3 Indtance1 (WS_OR3, X, Y, Z,K,M);
     
    
     
