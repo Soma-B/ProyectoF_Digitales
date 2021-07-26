@@ -1,6 +1,8 @@
 
 module AND_inciso2(
     output S_OR2,
+    output S_OR4,
+    output S_OR5,
     input X,
     input Y,
     input Z,
@@ -14,20 +16,41 @@ assign noZ = !Z;
 assign noK = !K;
 assign noM = !M;
 
-assign S_1 = (noX)&(noY)&(K)&(noM)&(noZ);
-assign S_2 = (noX)&(noY)&(noZ)&(K)&(M);
-assign S_3 = (noX)&(Y)&(noZ)&(K)&(noM);
-assign S_4 = (noX)&(Y)&(noZ)&(K)&(M);
-assign S_5 = (noX)&(Y)&(Z)&(K)&(M);
-assign S_6 = (noX)&(noY)&(Z)&(K)&(noM);
-assign S_7 = (noX)&(noY)&(Z)&(noK)&(noM);
-assign S_8 = (X)&(noY)&(noK)&(Z)&(M);
-assign S_9 = (X)&(noY)&(Z)&(noK)&(noM);
-assign S_10 = (X)&(noY)&(noZ)&(noK)&(M);
-assign S_11 = (X)&(noY)&(noZ)&(K)&(M);
-assign S_12 = (X)&(Y)&(noZ)&(K)&(M);
-assign S_13 = (X)&(Y)&(noZ)&(noK)&(M);
-assign S_14 = (X)&(noY)&(noZ)&(K)&(noM);
-assign S_OR2 = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_14);
+assign S_1 = (noX)&(noY)&(noZ)&(K)&(noM);//m2
+assign S_2 = (noX)&(noY)&(noZ)&(K)&(M);//m3
+assign S_3 = (noX)&(noY)&(Z)&(noK)&(noM);//m4
+assign S_4 = (noX)&(noY)&(Z)&(K)&(noM);//m6
+assign S_5 = (noX)&(Y)&(noZ)&(K)&(noM);//m10
+assign S_6=  (noX)&(Y)&(noZ)&(K)&(M);//m11
+assign S_7 = (noX)&(Y)&(Z)&(K)&(M);//m15
+assign S_8 = (X)&(noY)&(noZ)&(noK)&(M);//m17
+assign S_9 = (X)&(noY)&(noZ)&(K)&(noM);//m18
+assign S_10 = (X)&(noY)&(Z)&(noK)&(M);//m21
+assign S_11 = (X)&(Y)&(noZ)&(noK)&(M);//m25
+assign S_12 = (X)&(Y)&(noZ)&(K)&(M);//m27
+/*
+assign S_13 = (noX)&(noY)&(noZ)&(noK)&(noM);//x0
+assign S_14 = (noX)&(noY)&(Z)&(noK)&(M);//x5
+assign S_15 = (noX)&(Y)&(noZ)&(noK)&(noM);//x8
+assign S_16 = (noX)&(Y)&(noZ)&(noK)&(M);//x9
+assign S_17 = (X)&(noY)&(noZ)&(K)&(M);//x19
+assign S_18 = (X)&(noY)&(Z)&(noK)&(noM);//x20
+assign S_19 = (X)&(noY)&(Z)&(K)&(M);//x23
+assign S_20 = (X)&(Y)&(noZ)&(noK)&(noM);//x24
+*/
+assign S_13 = (noX)&(noY)&(noZ)&(noK)&(noM);//x0
+//assign S_14 = (noX)&(noY)&(Z)&(noK)&(M);//x5
+assign S_15 = (noX)&(Y)&(noZ)&(noK)&(noM);//x8
+//assign S_16 = (noX)&(Y)&(noZ)&(noK)&(M);//x9
+assign S_17 = (X)&(noY)&(noZ)&(K)&(M);//x19
+//assign S_18 = (X)&(noY)&(Z)&(noK)&(noM);//x20
+assign S_19 = (X)&(noY)&(Z)&(K)&(M);//x23
+//assign S_20 = (X)&(Y)&(noZ)&(noK)&(noM);//x24
+
+//assign S_OR2 = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12);
+//assign S_OR2 = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_14)|(S_15)|(S_16)|(S_17)|(S_18)|(S_19)|(S_20);
+assign S_OR2 = (S_1)|(S_2)|(S_3)|(S_4)|(S_5)|(S_6)|(S_7)|(S_8)|(S_9)|(S_10)|(S_11)|(S_12)|(S_13)|(S_15)|(S_17)|(S_19);
+assign S_OR4 = (noX&noY&noZ&K&noM)| (noX&noY&noZ&K&M)| (noX&noY&Z&noK&noM)| (noX&noY&Z&K&noM)| (noX&Y&noZ&K&noM)| (noX&Y&noZ&K&M)| (noX&Y&Z&K&M)| (X&noY&noZ&noK&M)| (X&noY&noZ&K&noM)| (X&noY&Z&noK&M)| (X&Y&noZ&noK&M)| (X&Y&noZ&K&M);  
+assign S_OR5 = (noX&noY&noZ&K&noM)| (noX&noY&noZ&K&M)| (noX&noY&Z&noK&noM)| (noX&noY&Z&K&noM)| (noX&Y&noZ&K&noM)| (noX&Y&noZ&K&M)| (noX&Y&Z&K&M)| (X&noY&noZ&noK&M)| (X&noY&noZ&K&noM)| (X&noY&Z&noK&M)| (X&Y&noZ&noK&M)| (X&Y&noZ&K&M)|(noX&noY&noZ&noK&noM)|(noX&Y&noZ&noK&noM)|(X&noY&noZ&K&M)|(X&noY&Z&K&M);  
 
 endmodule
